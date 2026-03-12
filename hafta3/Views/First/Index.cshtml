@@ -1,0 +1,42 @@
+﻿@{
+    ViewData["Title"] = "First Controller Index Page";
+    // Layout = "ExampleLayout"; 
+}
+
+@using hafta3.Controllers
+
+@section Css {
+    <style>
+        p {
+            color: red;
+            background-color:green;
+        }
+    </style>
+}
+@* Css ve Scripts i _Layout(ya da infex in layout sayfasına, default olarak _Layout idir.) a required: false parametresi ile tanımlanması gerekir. Css head in içine js en altta.*@
+@section Scripts {
+    <script type: "text/javascript">
+        alert("web sayfama hoşgeldiniz..")
+    </script>
+}
+
+
+
+
+@model List<FirstController.Student>
+@foreach(var item in Model)
+{
+    <div>
+        @item.Id - @item.Name - @item.Surname
+    </div>
+}
+
+
+
+<p>Today is: @DateTime.Now.ToShortDateString()<p>
+
+@{
+    var suanKiTarih = DateTime.Now.ToShortDateString();
+    <div>@suanKiTarih</div>
+}
+

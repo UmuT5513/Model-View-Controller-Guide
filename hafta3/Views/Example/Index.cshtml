@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Example Controller Index Page";
+    Layout = "ExampleLayout";
+}
+
+
+@section Css {
+    <link rel="stylesheet"
+          href="~/css/StyleSheet.css"
+          asp-append-version="true" />
+}
+@* sectionu ilgili layout sayfasına tanımlamayı unutma! *@
+
+@section header {
+    <p>This code is shown under the header tag</p>
+}
+@section footer {
+    <p>This code is shown under the footer tag</p>
+}
+<div>Example index page</div>
