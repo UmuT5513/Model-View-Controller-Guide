@@ -9,20 +9,8 @@ namespace hafta3.Controllers
         private ProductRepository _repository;
         private AppDbContext _context;
 
-        public ProductController(AppDbContext context)
-        {
-            _context = context;
-            
-            if (!_context.Products.Any()) // Eğer repo boş ise;
-            {
-                _context.Products.Add(new Product { Id = 1, Name = "Laptop", Price = 10000, Stok = 10 });
-                _context.Products.Add(new Product { Id = 2, Name = "Telefon", Price = 5000, Stok = 20 });
-                _context.Products.Add(new Product { Id = 3, Name = "Tablet", Price = 3000, Stok = 15 });
-                
-                _context.SaveChanges();
-            }
-        }
 
+        // product listesi ile
         /*public ProductController()
         {
             _repository = new ProductRepository();
@@ -55,7 +43,23 @@ namespace hafta3.Controllers
             return View();
         }*/
 
-        
+        // SQLDB crud
+
+
+        public ProductController(AppDbContext context)
+        {
+            _context = context;
+
+            if (!_context.Products.Any()) // Eğer table boş ise;
+            {
+                _context.Products.Add(new Product { Id = 1, Name = "Laptop", Price = 10000, Stok = 10 });
+                _context.Products.Add(new Product { Id = 2, Name = "Telefon", Price = 5000, Stok = 20 });
+                _context.Products.Add(new Product { Id = 3, Name = "Tablet", Price = 3000, Stok = 15 });
+
+                _context.SaveChanges();
+            }
+        }
+
         public IActionResult Index()
         {
             var urunler = _context.Products.ToList();
