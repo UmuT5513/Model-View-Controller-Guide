@@ -1,9 +1,12 @@
-﻿namespace hafta3.Models
+﻿using hafta3.Controllers;
+
+namespace hafta3.Models
 {
     public class ProductRepository
     {
         private static List<Product> _products = new List<Product>();
 
+   
         public List<Product> GetAllProducts()
         {
             return _products;
