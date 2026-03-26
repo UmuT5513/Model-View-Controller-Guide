@@ -26,8 +26,8 @@
             <td>@item.Stok</td>
             <td>
                 <a 
-                    asp-controller="product" 
-                    asp-action="remove" 
+                    asp-controller="product" @*first*@
+                    asp-action="remove" @*herhangi bir method ismi*@
                     asp-route-id="@item.Id">
                     Delete
                 </a>

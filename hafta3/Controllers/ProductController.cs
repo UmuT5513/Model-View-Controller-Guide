@@ -29,6 +29,16 @@ namespace hafta3.Controllers
             _repository.Remove(id);
             return RedirectToAction("Index");
         }
+
+        public IActionResult Add()
+        {
+            return View();
+        }
+
+        public IActionResult Update(int Id)
+        {
+            return View();
+        }
         
     }
 }
