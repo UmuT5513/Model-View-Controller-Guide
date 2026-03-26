@@ -17,11 +17,18 @@ namespace hafta3.Controllers
                 _repository.Add(new Product { Id = 2, Name = "Telefon", Price = 5000, Stok = 20 });
                 _repository.Add(new Product { Id = 3, Name = "Tablet", Price = 3000, Stok = 15 });
                 }
-        }););
+        }
         public IActionResult Index()
         {
             var urunler = _repository.GetAllProducts();
             return View(urunler);
         }
+
+        public IActionResult Remove(int id)
+        {
+            _repository.Remove(id);
+            return RedirectToAction("Index");
+        }
+        
     }
 }
