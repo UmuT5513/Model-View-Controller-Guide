@@ -7,8 +7,23 @@ namespace hafta3.Controllers
     {
 
         private ProductRepository _repository;
+        private AppDbContext _context;
 
-        public ProductController()
+        public ProductController(AppDbContext context)
+        {
+            _context = context;
+            
+            if (!_context.Products.Any()) // Eğer repo boş ise;
+            {
+                _context.Products.Add(new Product { Id = 1, Name = "Laptop", Price = 10000, Stok = 10 });
+                _context.Products.Add(new Product { Id = 2, Name = "Telefon", Price = 5000, Stok = 20 });
+                _context.Products.Add(new Product { Id = 3, Name = "Tablet", Price = 3000, Stok = 15 });
+                
+                _context.SaveChanges();
+            }
+        }
+
+        /*public ProductController()
         {
             _repository = new ProductRepository();
             if(!_repository.GetAllProducts().Any()) // Eğer repo boş ise;
@@ -38,7 +53,30 @@ namespace hafta3.Controllers
         public IActionResult Update(int Id)
         {
             return View();
-        }
+        }*/
+
         
+        public IActionResult Index()
+        {
+            var urunler = _context.Products.ToList();
+            return View(urunler);
+        }
+
+        public IActionResult Remove(int id)
+        {
+            _context.Remove(id);
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult Add()
+        {
+            return View();
+        }
+
+        public IActionResult Update(int Id)
+        {
+            return View();
+        }
+
     }
 }
