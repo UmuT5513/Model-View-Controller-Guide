@@ -122,8 +122,9 @@ Controller da `private AppDbContext _context;` context tanımla. CRUD fonksiyonl
 
 2) Migration Oluşturma
 
-**1) code-first yaklaşımını uygulamak için sqlserver da olan db yi sil(varsa) direkt add-migration initial ile migration oluştur migration/sekmesinde kodlar oluşacak.**
-**2) projeye gel navigasyondan Araçlar -> NuGet Paket Yöneticisi -> Paket Yöneticisi Konsolu nu bul `add-migration initial` yaz ve ilk migration u ekle. Bu migration gite benzer çalışır. Git nasıl ki projeyi versiyonlara bölerek takibini ve olası bir hata da geri dönüşü sağlıyorsa migration sistemi de db lerde bu ihtiyacı karşılar. `add-migration` diyerek bir nevi db yi commit ediyoruz. Push lamak için, yani değişikliklerimizin db de gözükmesi için, `update-database` komutunu yaz. Eğer hata olduğunu düşünüyorsan pushlamadan önce `remove-migration` şeklinde en son ki migration u silebilir bir önceki migration a dönebilirsin.**
+1) code-first yaklaşımını uygulamak için sqlserver da olan db yi sil(varsa) direkt `add-migration initial` ile migration oluştur **migration/** sekmesinde kodlar oluşacak.
+
+2) projeye gel, navigasyondan **Araçlar -> NuGet Paket Yöneticisi -> Paket Yöneticisi** Konsolu nu bul. Ardından açılan konsolda `add-migration initial` yaz ve ilk migration u ekle. Migration sistemi gite benzer çalışır. Git nasıl ki projeyi versiyonlara bölerek takibini ve olası bir hata da geri dönüşü sağlıyorsa migration sistemi de db lerde bu ihtiyacı karşılar. `add-migration` diyerek bir nevi db yi commit ediyoruz. Push lamak için, yani değişikliklerimizin db de gözükmesi için, `update-database` komutunu yaz. Eğer hata olduğunu düşünüyorsan pushlamadan önce `remove-migration` şeklinde en son ki migration u silebilir bir önceki migration a dönebilirsin.**
 
 
       add-migration initial // migration oluşturur
@@ -136,7 +137,6 @@ Controller da `private AppDbContext _context;` context tanımla. CRUD fonksiyonl
       
       // komple silme
       update-database 0
-
 
 
 
