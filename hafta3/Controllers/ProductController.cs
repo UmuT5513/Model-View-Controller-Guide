@@ -66,9 +66,14 @@ namespace hafta3.Controllers
             return View(urunler);
         }
 
+
+        // remove yi context üzerinden yapalım, find ile id ye göre ürünü bulup remove yapacağız, sonra savechanges ile değişiklikleri kaydedelim
         public IActionResult Remove(int id)
         {
-            _context.Remove(id);
+            var product = _context.Products.Find(id);
+            _context.Products.Remove(product);
+            _context.SaveChanges();
+
             return RedirectToAction("Index");
         }
 
