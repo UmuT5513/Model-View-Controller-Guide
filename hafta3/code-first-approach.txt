@@ -1,0 +1,14 @@
+code-first yaklaşımını uygulamak için sqlserver da olan db yi sil(varsa) direkt add-migration initial ile migration oluştur migration/sekmesinde kodlar oluşacak.
+
+
+add-migration initial // migration oluşturur
+remove-migration // db yansıtılmamış en son eklenen migration'ı siler (elle silme bunu kullan)
+update-database // migration'ları veritabanına uygular
+script-migration // migration'ları sql script olarak verir
+
+// migration a geri alma
+update-database -migration:initial // initial migration'ına geri dön
+
+// komple silme
+update-database 0
+

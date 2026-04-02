@@ -11,10 +11,10 @@
     
         public string? Color { get; set; }
     
-        public int? Height { get; set; }
 
-        public int? Weight { get; set; }
-        // ? işareti değerlerin null olabileceğini gösterir.    
+        public string Description { get; set; }
+
+        public string? ozellik { get; set; }
 
     }
 
