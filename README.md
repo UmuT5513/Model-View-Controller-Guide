@@ -2,7 +2,7 @@
 
 # Git History
 
-## 1 ve 2. Haftalar -> a10db21fbc664009099f0742ec88fcc340451430
+## 1 ve 2. Haftalar -> [a10db21fbc664009099f0742ec88fcc340451430](https://github.com/UmuT5513/Model-View-Controller-Guide/commit/a10db21fbc664009099f0742ec88fcc340451430)
 
 ### Controllers/FirstController.cs
 
@@ -58,10 +58,10 @@ First index inin layout sayfası zaten default olan *_layout* dur.
 
 ## 3.hafta 
 **3.hafta Commitleri sırasıyla:**
-1) ProductRepository e Add ve Remove işlemlerini ekle -> d1686cfc209d71f9015825547c61ddc30b37e3a8
-2) ProductRepository e Update işlemini ekle -> e99809be0b85b0e09d0db58a6af0e0708ad3b29a
-3) Controllers/ProductController ile Controller bağlantısı sağla ve Views/Product/Index.cshtml de göster -> 9bb1d627c9fec8a19322e11d335407a02c061e57
-4) Productları Views/Product/Index.cshtml sayfasında göster -> 43fee5a8529baae6b5aa444e8d178956e49f712a
+1) ProductRepository e Add ve Remove işlemlerini ekle -> [d1686cfc209d71f9015825547c61ddc30b37e3a8](https://github.com/UmuT5513/Model-View-Controller-Guide/commit/d1686cfc209d71f9015825547c61ddc30b37e3a8)
+2) ProductRepository e Update işlemini ekle -> [e99809be0b85b0e09d0db58a6af0e0708ad3b29a](https://github.com/UmuT5513/Model-View-Controller-Guide/commit/e99809be0b85b0e09d0db58a6af0e0708ad3b29a)
+3) Controllers/ProductController ile Controller bağlantısı sağla ve Views/Product/Index.cshtml de göster -> [9bb1d627c9fec8a19322e11d335407a02c061e57](https://github.com/UmuT5513/Model-View-Controller-Guide/commit/9bb1d627c9fec8a19322e11d335407a02c061e57)
+4) Productları Views/Product/Index.cshtml sayfasında göster ->  [43fee5a8529baae6b5aa444e8d178956e49f712a](https://github.com/UmuT5513/Model-View-Controller-Guide/commit/43fee5a8529baae6b5aa444e8d178956e49f712a)
 
 ### Models/Product.cs
 
@@ -92,10 +92,51 @@ Models/ProductReporsitory.cs de oluşturduğumuz repository nesnesinin bir deği
 
 ## 4.hafta
 
+1) Views/Product/Index.cshtml de tag helper ile tag içi controller ve action tanımlama -> [ddbf43b600af0efc90f233cd2d0289eb9741c45a](https://github.com/UmuT5513/Model-View-Controller-Guide/commit/ddbf43b600af0efc90f233cd2d0289eb9741c45a)
+2) Views/Product/ klasörüne Add ve Update işlemleri için Add ve Update sayfalarını ekle. -> [66a06417cb1421122cd674bee1f0c458ffbbf856](https://github.com/UmuT5513/Model-View-Controller-Guide/commit/66a06417cb1421122cd674bee1f0c458ffbbf856)
+<img width="603" height="965" alt="{98F381D6-38AB-421A-8D64-86A41FC077FE}" src="https://github.com/user-attachments/assets/ca67c1c9-c2fe-4679-bdbb-1b7016b263ed" />
+
+### Veri Tabanı İşlemleri
+
+#### SQL Connection String alma ve appsettings.json a ekleme
+
+**`Ctrl + Shift + P`** ye basıp **"sql server object explorer"** şeklinde arat. Kurduğun sql serverin üstüne sağ tıkla **Özelliklere** bas. **General** sekmesinin altında **Connection String** belirtilmiş. O nu al **appsettings.json** da şu şekilde belirt:
+
+<img width="636" height="221" alt="{44F86B51-2235-4F81-AA61-1FB7097EBBA7}" src="https://github.com/user-attachments/assets/d96fbe20-3305-49ce-80d0-a0d47bb62887" />
+
+
+
+3) models içinde AppDbContext.cs oluştur -> [4c09d8238055c53e956147de2b0aa33161974235](https://github.com/UmuT5513/Model-View-Controller-Guide/commit/4c09d8238055c53e956147de2b0aa33161974235)
+4) ProductController da ki CRUD işlemlerini SQL Server Db ye göre ayarla -> [7dc2516f356ca0da8f8f38f1dc1edc3a706eeb29](https://github.com/UmuT5513/Model-View-Controller-Guide/commit/7dc2516f356ca0da8f8f38f1dc1edc3a706eeb29)
+
+Controller da `private AppDbContext _context;` context tanımla. CRUD fonksiyonlarına parametre olarak ver. 
+
+5) Program.cs e veritabanı servisini ekle -> [1a0255847004c364ad7505093490fb8d2f52695a](https://github.com/UmuT5513/Model-View-Controller-Guide/commit/1a0255847004c364ad7505093490fb8d2f52695a)
+
+6) Daha önce oluşturulan AppDbContext.cs e db yi tanıt -> [6c48fd8dffed36e7508d174e30ca56193e2b625b](https://github.com/UmuT5513/Model-View-Controller-Guide/commit/6c48fd8dffed36e7508d174e30ca56193e2b625b)
 
 
 
 ## 5.hafta
+1) Models/Product.cs de yeni sütunları tanımla ve View/Product/Index sayfasında göster -> [a4240b74b283b69f13e2c5134b0f63268da07811](https://github.com/UmuT5513/Model-View-Controller-Guide/commit/a4240b74b283b69f13e2c5134b0f63268da07811)
+
+2) Migration Oluşturma
+
+**1) code-first yaklaşımını uygulamak için sqlserver da olan db yi sil(varsa) direkt add-migration initial ile migration oluştur migration/sekmesinde kodlar oluşacak.**
+**2) projeye gel navigasyondan Araçlar -> NuGet Paket Yöneticisi -> Paket Yöneticisi Konsolu nu bul `add-migration initial` yaz ve ilk migration u ekle. Bu migration gite benzer çalışır. Git nasıl ki projeyi versiyonlara bölerek takibini ve olası bir hata da geri dönüşü sağlıyorsa migration sistemi de db lerde bu ihtiyacı karşılar. `add-migration` diyerek bir nevi db yi commit ediyoruz. Push lamak için, yani değişikliklerimizin db de gözükmesi için, `update-database` komutunu yaz. Eğer hata olduğunu düşünüyorsan pushlamadan önce `remove-migration` şeklinde en son ki migration u silebilir bir önceki migration a dönebilirsin.**
+
+
+      add-migration initial // migration oluşturur
+      remove-migration // db yansıtılmamış en son eklenen migration'ı siler (elle silme bunu kullan)
+      update-database // migration'ları veritabanına uygular
+      script-migration // migration'ları sql script olarak verir
+      
+      // migration a geri alma
+      update-database -migration:initial // initial migration'ına geri dön
+      
+      // komple silme
+      update-database 0
+
 
 
 
