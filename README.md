@@ -2,7 +2,7 @@
 
 # Git History
 
-## 1, 2 ve 3. Haftalar-> a10db21fbc664009099f0742ec88fcc340451430
+## 1 ve 2. Haftalar-> a10db21fbc664009099f0742ec88fcc340451430
 
 ### Controllers/FirstController.cs
 
