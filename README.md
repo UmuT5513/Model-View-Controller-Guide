@@ -127,16 +127,17 @@ Controller da `private AppDbContext _context;` context tanımla. CRUD fonksiyonl
 2) projeye gel, navigasyondan **Araçlar -> NuGet Paket Yöneticisi -> Paket Yöneticisi** Konsolu nu bul. Ardından açılan konsolda `add-migration initial` yaz ve ilk migration u ekle. Migration sistemi gite benzer çalışır. Git nasıl ki projeyi versiyonlara bölerek takibini ve olası bir hata da geri dönüşü sağlıyorsa migration sistemi de db lerde bu ihtiyacı karşılar. `add-migration` diyerek bir nevi db yi commit ediyoruz. Push lamak için, yani değişikliklerimizin db de gözükmesi için, `update-database` komutunu yaz. Eğer hata olduğunu düşünüyorsan pushlamadan önce `remove-migration` şeklinde en son ki migration u silebilir bir önceki migration a dönebilirsin.**
 
 
-      add-migration initial // migration oluşturur
-      remove-migration // db yansıtılmamış en son eklenen migration'ı siler (elle silme bunu kullan)
-      update-database // migration'ları veritabanına uygular
-      script-migration // migration'ları sql script olarak verir
+* `add-migration` // migration oluşturur
+   
+* `remove-migration` // db yansıtılmamış en son eklenen migration'ı siler (elle silme bunu kullan)
+   
+* `update-database` // migration'ları veritabanına uygular
+   
+* `script-migration` // migration'ları sql script olarak verir
       
-      // migration a geri alma
-      update-database -migration:initial // initial migration'ına geri dön
+* `update-database -migration:initial` // initial migration'ına geri dön
       
-      // komple silme
-      update-database 0
+* `update-database 0` // komple silme
 
 
 
