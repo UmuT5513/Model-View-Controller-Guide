@@ -2,7 +2,7 @@
 
 # Git History
 
-## 1 ve 2. Haftalar-> a10db21fbc664009099f0742ec88fcc340451430
+## 1 ve 2. Haftalar -> a10db21fbc664009099f0742ec88fcc340451430
 
 ### Controllers/FirstController.cs
 
@@ -56,8 +56,43 @@ First index inin layout sayfası zaten default olan *_layout* dur.
   MapControllerRoute önemli !! proje çalıştırıldığında ilk olarak açılacak sayfayı belirtir.
   `pattern: "{controller=Home}/{action=Index}/{id?}"`
 
+## 3.hafta 
+**3.hafta Commitleri sırasıyla:**
+1) ProductRepository e Add ve Remove işlemlerini ekle -> d1686cfc209d71f9015825547c61ddc30b37e3a8
+2) ProductRepository e Update işlemini ekle -> e99809be0b85b0e09d0db58a6af0e0708ad3b29a
+3) Controllers/ProductController ile Controller bağlantısı sağla ve Views/Product/Index.cshtml de göster -> 9bb1d627c9fec8a19322e11d335407a02c061e57
+4) Productları Views/Product/Index.cshtml sayfasında göster -> 43fee5a8529baae6b5aa444e8d178956e49f712a
+
+### Models/Product.cs
+
+Product nesnesinin tanımlanması
+
+
+### Models/ProductRepository.cs
+
+**Temel CRUD işlemleri => Add, Remove  ve Update**
+
+Henüz db kurmadığımız için productlarımızı depolayabileceğimiz bir repository oluşturup bu repository üzerinden CRUD işlemlerini gerçekleştiriyoruz.
+
+
+### Controllers/ProductController.cs
+
+Models/ProductReporsitory.cs de oluşturduğumuz repository nesnesinin bir değişkenini tanımlıyoruz. Controller dosyalarının içinde asıl crud işlemleri gerçekleşir. 
+
+### Views/Product/Index.cshtml
+
+
+<img width="443" height="592" alt="{48F7BAA8-1DA9-424B-A2D8-5BD488F5039D}" src="https://github.com/user-attachments/assets/ce7d2a32-0f8e-4c39-a23e-8c51af875be4" />
+
+
+* `@model List<Product>` ile product repository de ki listemizi index sayfası için karşılıyoruz/tanımlıyoruz.
+
+* Foreach döngüsü tanımında ki Model in 'M' si büyük olmalı.
+
 
 ## 4.hafta
+
+
 
 
 ## 5.hafta
