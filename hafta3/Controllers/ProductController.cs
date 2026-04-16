@@ -53,9 +53,9 @@ namespace hafta3.Controllers
 
             if (!_context.Products.Any()) // Eğer table boş ise;
             {
-                _context.Products.Add(new Product { Id = 1, Name = "Laptop", Price = 10000, Stok = 10 });
-                _context.Products.Add(new Product { Id = 2, Name = "Telefon", Price = 5000, Stok = 20 });
-                _context.Products.Add(new Product { Id = 3, Name = "Tablet", Price = 3000, Stok = 15 });
+                _context.Products.Add(new Product { Name = "Laptop", Price = 10000, Stok = 10, Color = "Gri" , Description = "Güçlü işlemci ve büyük RAM" , ozellik = "Yüksek performans" });
+                _context.Products.Add(new Product { Name = "Telefon", Price = 5000, Stok = 20, Color = "Siyah", Description = "Yüksek kaliteli kamera ve uzun pil ömrü" , ozellik = "Yüksek kaliteli kamera" });
+                _context.Products.Add(new Product { Name = "Tablet", Price = 3000, Stok = 15, Color = " Beyaz", Description = "Hafif ve taşınabilir, uzun pil ömrü" , ozellik = "Hafif ve taşınabilir" });
 
                 _context.SaveChanges();
             }
@@ -67,27 +67,21 @@ namespace hafta3.Controllers
             return View(urunler);
         }
 
-        public IActionResult SaveProduct()
+        public IActionResult SaveProduct(Product newProduct)
         {
-            var name = HttpContext.Request.Form["product-name"].ToString();
-            var price = decimal.Parse(HttpContext.Request.Form["product-price"].ToString());
-            var stok = int.Parse(HttpContext.Request.Form["product-stok"].ToString());
-            var color = HttpContext.Request.Form["product-color"].ToString();
-            var description = HttpContext.Request.Form["product-description"].ToString();
-            var ozellik = HttpContext.Request.Form["product-ozellik"].ToString();
-
-            var newProduct = new Product
-            {
-                Name = name,
-                Price = price,
-                Stok = stok,
-                Color = color,
-                Description = description,
-                ozellik = ozellik
-            };
-
+         
             _context.Products.Add(newProduct);
             _context.SaveChanges();
+            
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult UpdateProduct(Product newProduct)
+        {
+         
+            _context.Products.Update(newProduct);
+            _context.SaveChanges();
+
             return RedirectToAction("Index");
         }
 
@@ -109,7 +103,8 @@ namespace hafta3.Controllers
 
         public IActionResult Update(int Id)
         {
-            return View();
+            var product = _context.Products.Find(Id);
+            return View(product);
         }
 
     }
