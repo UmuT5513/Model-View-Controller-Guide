@@ -73,6 +73,8 @@ namespace hafta3.Controllers
             _context.Products.Add(newProduct);
             _context.SaveChanges();
             
+            TempData["status"] = "The product has been added successfully.";
+
             return RedirectToAction("Index");
         }
 
@@ -81,6 +83,8 @@ namespace hafta3.Controllers
          
             _context.Products.Update(newProduct);
             _context.SaveChanges();
+
+            TempData["status"] = "The product has been updated successfully.";
 
             return RedirectToAction("Index");
         }
@@ -92,6 +96,8 @@ namespace hafta3.Controllers
             var product = _context.Products.Find(id);
             _context.Products.Remove(product);
             _context.SaveChanges();
+
+            TempData["status"] = "The product has been removed successfully.";
 
             return RedirectToAction("Index");
         }
