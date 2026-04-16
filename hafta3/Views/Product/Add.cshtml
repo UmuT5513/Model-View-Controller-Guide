@@ -6,3 +6,28 @@
 }
 
 <h1>Add Page</h1>
+
+
+
+<form asp-controller="Product" asp-action="SaveProduct" method="post">
+    <label>Product Name: </label>
+    <input type="text" name="product-name"/>
+    
+    <label>Product Stok: </label>
+    <input type="text" name="product-stok" />
+
+    <label>Product Price: </label>
+    <input type="text" name="product-price" />
+
+    <label>Product Color: </label>
+    <input type="text" name="product-color" />
+
+    <label>Product Description: </label>
+    <input type="text" name="product-description" />
+
+    <label>Product Ozellik: </label>
+    <input type="text" name="product-ozellik" />
+
+    <button type="submit">Save</button>
+
+</form>

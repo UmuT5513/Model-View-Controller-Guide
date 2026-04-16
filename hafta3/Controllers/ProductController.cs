@@ -1,5 +1,6 @@
 ﻿using hafta3.Models;
 using Microsoft.AspNetCore.Mvc;
+using NuGet.DependencyResolver;
 
 namespace hafta3.Controllers
 {
