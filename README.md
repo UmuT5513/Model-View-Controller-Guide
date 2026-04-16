@@ -140,7 +140,7 @@ Controller da `private AppDbContext _context;` context tanımla. CRUD fonksiyonl
 * `update-database 0` // komple silme
 
 
-
+.
 
 # Kavramlar
 *Razor Syntax*= @ {...}, cshtml uzantılı dosyalarda geçerlidir. Bize html dosyalarının içinde c# kodu yazma olanağı sağlar.

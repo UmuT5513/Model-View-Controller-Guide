@@ -11,7 +11,7 @@ using hafta3.Models;
 namespace hafta3.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20260402074837_initial")]
+    [Migration("20260402113120_initial")]
     partial class initial
     {
         /// <inheritdoc />

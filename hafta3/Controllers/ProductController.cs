@@ -66,6 +66,30 @@ namespace hafta3.Controllers
             return View(urunler);
         }
 
+        public IActionResult SaveProduct()
+        {
+            var name = HttpContext.Request.Form["product-name"].ToString();
+            var price = decimal.Parse(HttpContext.Request.Form["product-price"].ToString());
+            var stok = int.Parse(HttpContext.Request.Form["product-stok"].ToString());
+            var color = HttpContext.Request.Form["product-color"].ToString();
+            var description = HttpContext.Request.Form["product-description"].ToString();
+            var ozellik = HttpContext.Request.Form["product-ozellik"].ToString();
+
+            var newProduct = new Product
+            {
+                Name = name,
+                Price = price,
+                Stok = stok,
+                Color = color,
+                Description = description,
+                ozellik = ozellik
+            };
+
+            _context.Products.Add(newProduct);
+            _context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
 
         // remove yi context üzerinden yapalım, find ile id ye göre ürünü bulup remove yapacağız, sonra savechanges ile değişiklikleri kaydedelim
         public IActionResult Remove(int id)
