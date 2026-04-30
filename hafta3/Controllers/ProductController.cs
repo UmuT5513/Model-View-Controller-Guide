@@ -104,6 +104,13 @@ namespace hafta3.Controllers
 
         public IActionResult Add()
         {
+            ViewBag.Expire = new Dictionary<string, int>()
+            {
+                { "1 Month", 1 },
+                { "3 Months", 3 },
+                { "6 Months", 6 },
+                { "1 Year", 12 }
+            };
             return View();
         }
 

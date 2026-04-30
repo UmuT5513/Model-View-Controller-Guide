@@ -16,6 +16,13 @@
 
         public string? ozellik { get; set; }
 
+        public bool isPublished { get; set; }
+
+        public int Expire { get; set; }
+
+        public DateTime? PublishedDate { get; set; }
+
+
     }
 
 
