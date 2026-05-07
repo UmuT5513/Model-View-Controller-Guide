@@ -1,4 +1,6 @@
-﻿using hafta3.Models;
+﻿using AutoMapper;
+using hafta3.Models;
+using hafta3.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using NuGet.DependencyResolver;
 
@@ -9,6 +11,7 @@ namespace hafta3.Controllers
 
         private ProductRepository _repository;
         private AppDbContext _context;
+        private readonly IMapper _mapper;
 
 
         // product listesi ile
@@ -47,9 +50,10 @@ namespace hafta3.Controllers
         // SQLDB crud
 
 
-        public ProductController(AppDbContext context)
+        public ProductController(AppDbContext context, IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
 
             if (!_context.Products.Any()) // Eğer table boş ise;
             {
@@ -64,7 +68,7 @@ namespace hafta3.Controllers
         public IActionResult Index()
         {
             var urunler = _context.Products.ToList();
-            return View(urunler);
+            return View(_mapper.Map<List<ProductViewModel>>(urunler));
         }
 
         public IActionResult SaveProduct(Product newProduct)

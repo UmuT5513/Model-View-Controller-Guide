@@ -1,5 +1,6 @@
 using hafta3.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,6 +9,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 // veritabanı servisini ekle
 builder.Services.AddDbContext<AppDbContext>(options => { options.UseSqlServer(builder.Configuration.GetConnectionString("SqlCon")); }); // SqlCon appsettings.json dosyasındaki connection string'in adı
+
+builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
+
 
 var app = builder.Build();
 

@@ -1,4 +1,5 @@
-﻿
+﻿@using hafta3.ViewModels
+
 @*
     For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 *@
@@ -11,7 +12,7 @@
     </div>
 }
 
-@model List<Product>
+@model List<ProductViewModel>
 
 <a asp-controller="product" asp-action="add">Add Product</a>
 <table>
