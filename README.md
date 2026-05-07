@@ -140,7 +140,24 @@ Controller da `private AppDbContext _context;` context tanımla. CRUD fonksiyonl
 * `update-database 0` // komple silme
 
 
-.
+## 6.hafta Product Add Page
+
+#### **2 yöntemi var: Uzun yöntem ve Kısa yöntem**
+
+##### Uzun yöntem -> [aefd43e3c7ff5709c1ef4616ba61efea7d00f826](https://github.com/UmuT5513/Model-View-Controller-Guide/commit/aefd43e3c7ff5709c1ef4616ba61efea7d00f826)
+
+##### Kısa yöntem (Model Binding) -> [4fbc01a368fe85c55bd16575804e9674610968e0](https://github.com/UmuT5513/Model-View-Controller-Guide/commit/4fbc01a368fe85c55bd16575804e9674610968e0)
+
+
+#### Kullanıcıya uyaru mesajları gönderme -> [f04851c7ee9fa40e3117384359efd46b55b64135](https://github.com/UmuT5513/Model-View-Controller-Guide/commit/f04851c7ee9fa40e3117384359efd46b55b64135)
+<img width="977" height="984" alt="{19A7684B-B79C-422D-A028-F53E6B890BE6}" src="https://github.com/user-attachments/assets/8c37ad23-d768-4213-9b61-4498cff89a33" />
+
+
+
+## 7.hafta -> Product a yeni attributelar ekle: isPublished, Expire, PublishedDate. View da göster. Product add page i düzenle. -> [a96c8cb1cddadf7b9bfce3210d443540ccd9598d](https://github.com/UmuT5513/Model-View-Controller-Guide/commit/a96c8cb1cddadf7b9bfce3210d443540ccd9598d)
+**Update sayfası ödev**
+
+
 
 # Kavramlar
 *Razor Syntax*= @ {...}, cshtml uzantılı dosyalarda geçerlidir. Bize html dosyalarının içinde c# kodu yazma olanağı sağlar.
