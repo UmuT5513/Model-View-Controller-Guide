@@ -71,21 +71,35 @@ namespace hafta3.Controllers
             return View(_mapper.Map<List<ProductViewModel>>(urunler));
         }
 
-        public IActionResult SaveProduct(Product newProduct)
+        public IActionResult Add(ProductViewModel newProduct)
         {
-         
-            _context.Products.Add(newProduct);
-            _context.SaveChanges();
-            
-            TempData["status"] = "The product has been added successfully.";
 
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                _context.Products.Add(_mapper.Map<Product>(newProduct));
+                _context.SaveChanges();
+
+                TempData["status"] = "The product has been added successfully.";
+
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                ViewBag.Expire = new Dictionary<string, int>()
+                {
+                    { "1 Month", 1 },
+                    { "3 Months", 3 },
+                    { "6 Months", 6 },
+                    { "1 Year", 12 }
+                };
+                return View(newProduct);
+            }
         }
 
-        public IActionResult UpdateProduct(Product newProduct)
+        public IActionResult UpdateProduct(ProductViewModel newProduct)
         {
          
-            _context.Products.Update(newProduct);
+            _context.Products.Update(_mapper.Map<Product>(newProduct));
             _context.SaveChanges();
 
             TempData["status"] = "The product has been updated successfully.";
@@ -106,17 +120,7 @@ namespace hafta3.Controllers
             return RedirectToAction("Index");
         }
 
-        public IActionResult Add()
-        {
-            ViewBag.Expire = new Dictionary<string, int>()
-            {
-                { "1 Month", 1 },
-                { "3 Months", 3 },
-                { "6 Months", 6 },
-                { "1 Year", 12 }
-            };
-            return View();
-        }
+       
 
         public IActionResult Update(int Id)
         {
