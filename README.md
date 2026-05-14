@@ -159,5 +159,32 @@ Controller da `private AppDbContext _context;` context tanımla. CRUD fonksiyonl
 
 
 
+## 8.hafta
+1) Update.cshtml sayfasını ekle -> [f0affa1c908a9d2df23cc3fb83fcaf3fc15486dd](https://github.com/UmuT5513/Model-View-Controller-Guide/commit/f0affa1c908a9d2df23cc3fb83fcaf3fc15486dd)
+2) ProductViewModel ve IMapper (AutoMapper) ekle -> [2a94b3f26b74b81092ce6e96c1f4791ef4059c39](https://github.com/UmuT5513/Model-View-Controller-Guide/commit/2a94b3f26b74b81092ce6e96c1f4791ef4059c39)
+3) Product doğrulamalarını (validation) ekle -> [e1f2c987a80ace26b92f4b5604f352af35c5b39d](https://github.com/UmuT5513/Model-View-Controller-Guide/commit/e1f2c987a80ace26b92f4b5604f352af35c5b39d)
+
+### Views/Product/Update.cshtml
+Product update formu oluşturuldu ve ürün güncelleme işlemi için alanlar eklendi.
+
+### ViewModels/ProductViewModel.cs
+Ürün doğrulamaları (validation) için veri anotasyonları tanımlandı.
+
+### Mapping/ViewModelMapping.cs
+AutoMapper ile Product <-> ProductViewModel eşlemesi yapıldı.
+
+
+## 9.hafta
+1) Tag helper kullanımını ekle -> [4779e6a9c6b4b08f886c200d5f6b999d81b6256f](https://github.com/UmuT5513/Model-View-Controller-Guide/commit/4779e6a9c6b4b08f886c200d5f6b999d81b6256f)
+
+### TagHelpers/ItalicTagHelper.cs ve TagHelpers/ProductShowTagHelper.cs
+Custom tag helper sınıfları oluşturuldu.
+
+### Views/_ViewImports.cshtml
+Custom tag helper'lar projeye tanıtıldı.
+
+### Views/Home/Index.cshtml
+`<italic>` ve `<product-show>` etiketleri kullanıldı.
+
 # Kavramlar
 *Razor Syntax*= @ {...}, cshtml uzantılı dosyalarda geçerlidir. Bize html dosyalarının içinde c# kodu yazma olanağı sağlar.
